@@ -27,7 +27,7 @@ const SendMessage = ({ scroll }) => {
             placeholder="Message..."
             type="text"
             value={text}
-            onChange={(e) => setMsg(e.target.value)}
+            onChange={(e) => setText(e.target.value)}
           />
           <button type="submit">Send</button>
         </div>
