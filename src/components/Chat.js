@@ -19,21 +19,21 @@ const Chat = () => {
   }, []);
 
   return (
-    <div className="chat-container">
+    <div className="chat">
       <SignOut />
-      <div>
+      <div className="messages">
         {messages.map(({ text, photoURL, displayName }, index) => (
           <div key={index}>
             <div className="single-message-container">
-              <img src={photoURL} alt="profileImage" />
+              <img src={photoURL} alt={displayName} />
               <h2>{displayName}</h2>
               <p>{text}</p>
             </div>
           </div>
         ))}
+        <div ref={scroll}></div>
       </div>
       <Message scroll={scroll} />
-      <div ref={scroll}></div>
     </div>
   );
 };

@@ -13,22 +13,23 @@ const SendMessage = ({ scroll }) => {
   const sendMessage = async (e) => {
     e.preventDefault();
     const { uid, photoURL, displayName } = auth.currentUser;
-
-    await db.collection("messages").add({
-      text,
-      photoURL,
-      displayName,
-      uid,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-    });
+    if (text !== "") {
+      await db.collection("messages").add({
+        text,
+        photoURL,
+        displayName,
+        uid,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      });
+    }
     setText("");
     scroll.current.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <div className="message-container">
+    <div className="send-message">
       <form onSubmit={sendMessage}>
-        <div className="sendMsg">
+        <div className="input-container">
           <input
             placeholder="Message..."
             type="text"
