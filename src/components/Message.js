@@ -26,7 +26,7 @@ const SendMessage = ({ scroll }) => {
   };
 
   return (
-    <div>
+    <div className="message-container">
       <form onSubmit={sendMessage}>
         <div className="sendMsg">
           <input
@@ -36,7 +36,9 @@ const SendMessage = ({ scroll }) => {
             ref={inputFocusRef}
             onChange={(e) => setText(e.target.value)}
           />
-          <button type="submit">Send</button>
+          <button className="send-btn" type="submit">
+            Send
+          </button>
         </div>
       </form>
     </div>

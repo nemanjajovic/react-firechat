@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import { db, auth } from "../firebase";
+import { db } from "../firebase";
 
 import SignOut from "./SignOut";
 import Message from "./Message";
@@ -19,12 +19,12 @@ const Chat = () => {
   }, []);
 
   return (
-    <div>
+    <div className="chat-container">
       <SignOut />
       <div>
         {messages.map(({ text, photoURL, displayName }, index) => (
           <div key={index}>
-            <div>
+            <div className="single-message-container">
               <img src={photoURL} alt="profileImage" />
               <h2>{displayName}</h2>
               <p>{text}</p>
