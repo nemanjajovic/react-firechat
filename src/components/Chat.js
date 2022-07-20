@@ -25,9 +25,11 @@ const Chat = () => {
         {messages.map(({ text, photoURL, displayName }, index) => (
           <div key={index}>
             <div className="single-message-container">
-              <img src={photoURL} alt={displayName} />
-              <h2>{displayName}</h2>
-              <p>{text}</p>
+              <img src={photoURL} />
+              <div className="single-message-content">
+                <h2>{displayName}</h2>
+                <p>{text}</p>
+              </div>
             </div>
           </div>
         ))}

@@ -10,7 +10,6 @@ html {
 }
 
 h2 {
-  display: none;
   font-size: 0.9rem;
 }
 img {
@@ -28,31 +27,40 @@ body {
 }
 
 input {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   height: 3rem;
   width: 80%;
   color: #eee;
   padding: 5px;
   background: transparent;
+  border-top: 1px solid #eee;
   border-bottom: none;
+  border-right: none;
+  outline: none;
+}
+
+input::placeholder {
+  color: #eee;
 }
 
 .input-container > button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
   width: 20%;
   height: 3rem;
-}
-
-.input-container {
-  position: absolute;
-  bottom: 0;
-  width: 100vw;
-  /* overflow: hidden; */
-}
-
-.send-btn {
+  border-left: 1px solid #eee;
+  border-top: 1px solid #eee;
   background-color: transparent;
   color: #eee;
   padding: 5px;
-  border-top: 1px solid #111;
+}
+
+.input-container {
+  width: 100vw;
+  /* overflow: hidden; */
 }
 
 .app {
@@ -67,11 +75,19 @@ input {
 
 .messages {
   height: 80%;
-  overflow: scroll;
+  overflow-y: scroll;
   padding: 1rem 1rem 0rem 1rem;
+}
+.messages::-webkit-scrollbar {
+  display: none;
 }
 
 .send-message {
   height: 20%;
   display: flex;
+}
+
+.single-message-container {
+  display: flex;
+  align-items: center;
 }
