@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import { db } from "../firebase";
+import { db, auth } from "../firebase";
 
 import SignOut from "./SignOut";
 import Message from "./Message";
@@ -22,9 +22,13 @@ const Chat = () => {
     <div className="chat">
       <SignOut />
       <div className="messages">
-        {messages.map(({ text, photoURL, displayName }, index) => (
+        {messages.map(({ text, photoURL, displayName, uid }, index) => (
           <div key={index}>
-            <div className="single-message-container">
+            <div
+              className={`msg ${
+                uid === auth.currentUser.uid ? "sent" : "received"
+              }`}
+            >
               <img src={photoURL} />
               <div className="single-message-content">
                 <h2>{displayName}</h2>

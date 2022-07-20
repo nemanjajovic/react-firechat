@@ -87,7 +87,22 @@ input::placeholder {
   display: flex;
 }
 
-.single-message-container {
+.sent {
+  display: flex;
+  /* width: 20%; */
+  margin-bottom: 10px;
+  padding: 1rem 0.5rem;
+  border-radius: 10px;
+  align-items: center;
+  background-color: rgb(91, 91, 91);
+}
+.received {
   display: flex;
   align-items: center;
+  flex-direction: row-reverse;
+  /* width: 20%; */
+  margin-bottom: 10px;
+  padding: 1rem 0.5rem;
+  border-radius: 10px;
+  background-color: rgb(91, 91, 91) ;
 }
