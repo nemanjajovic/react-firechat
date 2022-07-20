@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { db, auth } from "../firebase";
 import firebase from "firebase";
 
 const SendMessage = ({ scroll }) => {
   const [text, setText] = useState("");
+  const inputFocusRef = useRef();
+
+  useEffect(() => {
+    inputFocusRef.current.focus();
+  }, []);
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -27,6 +32,7 @@ const SendMessage = ({ scroll }) => {
             placeholder="Message..."
             type="text"
             value={text}
+            ref={inputFocusRef}
             onChange={(e) => setText(e.target.value)}
           />
           <button type="submit">Send</button>
