@@ -8,12 +8,16 @@
 # testing
 /coverage
 
+# dev assets
+Layout Schema.bmp
+
 # production
 /build
 
 #firebase
 .firebaserc
 firebase.json
+/.firebase
 
 # misc
 .DS_Store
