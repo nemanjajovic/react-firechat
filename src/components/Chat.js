@@ -22,10 +22,11 @@ const Chat = () => {
     <div>
       <SignOut />
       <div>
-        {messages.map(({ text, photoURL }, index) => (
+        {messages.map(({ text, photoURL, displayName }, index) => (
           <div key={index}>
             <div>
               <img src={photoURL} alt="profileImage" />
+              <h2>{displayName}</h2>
               <p>{text}</p>
             </div>
           </div>
