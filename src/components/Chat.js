@@ -21,22 +21,24 @@ const Chat = () => {
   return (
     <div className="chat">
       <SignOut />
-      <div className="messages">
-        {messages.map(({ text, photoURL, displayName, uid }, index) => (
-          <div key={index}>
-            <div
-              className={`msg ${
-                uid === auth.currentUser.uid ? "sent" : "received"
-              }`}
-            >
-              <img src={photoURL} />
-              <div className="single-message-content">
-                <h2>{displayName}</h2>
-                <p>{text}</p>
+      <div className="container">
+        <div className="messages">
+          {messages.map(({ text, photoURL, displayName, uid }, index) => (
+            <div key={index}>
+              <div
+                className={`msg ${
+                  uid === auth.currentUser.uid ? "sent" : "received"
+                }`}
+              >
+                <img src={photoURL} />
+                <div className="single-message-content">
+                  <h2>{displayName}</h2>
+                  <p>{text}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
         <div ref={scroll}></div>
       </div>
       <Message scroll={scroll} />
